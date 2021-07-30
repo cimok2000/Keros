@@ -26,9 +26,9 @@ describe('Keros', () => {
   it('⚡ findCitiesByName    - should return an array of cities', async () => {
     const response = weather.findCitiesByName("cal");
     chai.expect(response).to.be.an('array');
-  });
+  }); 
 
-  it('⚡ findCityByName      - should return a city', async () => {
+  it('⚡ findCityByName      - should return a city object', async () => {
     const response = weather.findCityByName("london");
     chai.expect(response).to.be.an('object');
   });
