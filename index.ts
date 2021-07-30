@@ -48,7 +48,7 @@ export default class Keros {
    * @param {string} id Your city's ID
    * @author Cimok
    */
-  public getByCityID = async (id: string): Promise<IWeather> => await this.request(`?id=${id}`);
+  public getByCityID = async (id: number): Promise<IWeather> => await this.request(`?id=${id}`);
 
   /**
    * Gets weather for a given city by it's name
@@ -57,12 +57,12 @@ export default class Keros {
    */
   public getByCityName = async (name: string): Promise<IWeather> => await this.request(`?q=${name}`);
 
-  /**
+  /** 
    * Gets weather & more for a given city by it's longitude and latitude
    * @param {string} cords Your city's coordinates
    * @author Cimok
    */
-  public getByCityCords = async (lat: number, lon: number): Promise<ICordsWeather> => (await axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${this.apiKey}`)).data;
+  public getByCityCoords = async (lat: number, lon: number): Promise<ICordsWeather> => (await axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${this.apiKey}`)).data;
 
   /**
    * Finds all cities who the names of match the given string
